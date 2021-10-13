@@ -29,13 +29,7 @@ jobs:
     - name: Connect to Redis
           # Runs a script that creates a Redis client, populates
           # the client with data, and retrieves data
-      run: redis-server
-          # Environment variable used by the `client.js` script to create a new Redis client.
-      env:
-            # The hostname used to communicate with the Redis service container
-        REDIS_HOST: redis
-            # The default Redis port
-        REDIS_PORT: 6379
+      
 
   build:
 
@@ -56,3 +50,8 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+      env:
+            # The hostname used to communicate with the Redis service container
+        REDIS_HOST: redis
+            # The default Redis port
+        REDIS_PORT: 6379
