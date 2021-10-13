@@ -43,7 +43,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    name: Connect to Redis
+    -name: Connect to Redis
         # Runs a script that creates a Redis client, populates
         # the client with data, and retrieves data
         run: node client.js
